@@ -1,4 +1,4 @@
-package Basics;
+package basics;
 
 public class Recursion_Example {
 	static int[] arr = {10,3,4,45,5,5,50};
