@@ -17,6 +17,7 @@ public class LinkedList_Example {
 	Node tail = null;
 
 	//Create new Node with value
+	//O(1) -> time complexity
 	public void createNode(int val) {
 		Node newNode = new Node(val);
 		if (head == null) {
@@ -31,6 +32,7 @@ public class LinkedList_Example {
 	}
 
 	// Printing List values
+	//O(n) -> time complexity
 	public void getList(Node headNode) {
 		Node current = headNode;
 		while (current != null) {
@@ -40,7 +42,7 @@ public class LinkedList_Example {
 	}
 
 	// Replacing head
-	//
+	//O(1) -> time complexity
 	public void addNodesAtTheBeginning(int i) {
 		Node newNode = new Node(i);
 
@@ -56,6 +58,7 @@ public class LinkedList_Example {
 	
 	//Replace node.next for index-1
 	//add original index node as node.next at Index
+	//O(n) -> time complexity
 	public void addNodeAtGivenIndex(int index, int value) {
 		Node newNode = new Node(value);
 		if (head == null) {
@@ -84,6 +87,7 @@ public class LinkedList_Example {
 	
 	
 	//Delete last node
+	//O(n) -> time complexity
 	public void deleteLastNode(Node headNode) {
 		Node currentNode = headNode;
 		do {
@@ -95,12 +99,14 @@ public class LinkedList_Example {
 	}
 	
 	//Removing head from List
+	//O(1) -> time complexity
 	public void deleteFirstNode(Node headNode) {
 		head = headNode.next;
 	
 	}
 	
 	//Removing node at specific index
+	//O(n) -> time complexity
 	public void deleteIndexNode(int index, Node headNode) {
 		Node currentNode = headNode;
 		//Node temp = headNode;
@@ -114,6 +120,7 @@ public class LinkedList_Example {
 	}
 	
 	//Reversing Linked List
+	//O(n) -> time complexity
 	public void reverseNode(Node headNode) {
 		Node current = headNode;
 		Node prev = null;
