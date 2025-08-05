@@ -80,7 +80,35 @@ public class BinarySearchTree {
 		}
 
 	}
-
+	
+	public int getHeight() {
+		return height(root);
+	}
+	public int height(Node root) {
+		if(root==null) return -1;
+		
+		return 1+Math.max(height(root.leftChild), height(root.rightChild));
+	}
+	
+	public int searchValue(int value) {
+		return searchValue(root, 0, value);
+	}
+	public int searchValue(Node current, int count, int value) {
+		if(current==null) {
+			return -1;
+		}
+		else if(current.value<value) {
+			count=count+1;
+			return searchValue(current.rightChild, count, value);
+		}
+		else if(current.value>value) {
+			count=count+1;
+			return searchValue(current.leftChild, count, value);
+		}
+		else
+			return count;
+		
+	}
 	public static void main(String[] args) {
 		int[] a = { 4, 6, 12, 3, 9, 7, 14, 2 };
 
@@ -93,6 +121,10 @@ public class BinarySearchTree {
 		binarySearchTree.printBT();
 		System.out.println(binarySearchTree.min());
 		System.out.println(binarySearchTree.max());;
+		
+		System.out.println(binarySearchTree.getHeight());
+		
+		System.out.println(binarySearchTree.searchValue(14));
 	}
 
 }
